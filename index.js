@@ -48,12 +48,10 @@ function getAllMovieTitles(movies) {
  *  //> 96
  */
 function getHighestMetascore(movies) {
-  
+  let newArr = []
   let hiNum = 0;
   for (let i = 0; i < movies.length; i++){
-    if(movies.metascore > hiNum) {
-      hiNum = movies.metascore;
-  }
+    newArr.push(movies[i].metascore >= hiNum)
   }
    return hiNum
 }
@@ -70,9 +68,11 @@ function getHighestMetascore(movies) {
  *  //> 7.76
  */
 function getAverageIMDBRating(movies) {
+  let avg = (movies / movies.length) * movies.length
   for (let i = 0; i < movies.length; i++){
     
   }
+  return avg
 }
 
 /**
@@ -109,9 +109,11 @@ function countByRating(movies) {
     };
  */
 function findById(movies , id) {
+  let newArr = []
   for (let i = 0; i < movies.length; i++){
-
+    newArr.push(movies[i].imdbID)
   }
+   return null
 }
 
 /**
@@ -135,9 +137,11 @@ function findById(movies , id) {
  *  //> []
  */
 function filterByGenre(movies, genre) {
+  let newGenreArr =[]
   for (let i = 0; i < movies.length; i++){
 
   }
+   return newGenreArr
 }
 
 /**
@@ -163,9 +167,11 @@ function filterByGenre(movies, genre) {
     ];
  */
 function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  let releasedArr = [];
   for (let i = 0; i < movies.length; i++){
 
   }
+  return releasedArr
 }
 
 /**
@@ -184,7 +190,7 @@ function getBiggestBoxOfficeMovie(movies) {
   for (let i = 0; i < movies.length; i++){
    Math.max(movies[i].title.boxOffice)
   }
-    return movies
+    return null
 }
 
 // Do not change anything below this line.
